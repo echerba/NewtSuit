@@ -1,14 +1,12 @@
-#ifndef __INC_CONTROL_H
-#define __INC_CONTROL_H
 #include "Control.h"
 
-void Control::Control()
+Control::Control()
 {
     pinMode(PlayPin, INPUT);
     pinMode(NextPin, INPUT);
 }
 
-void Control::ReadControls(bool&togglePlay, bool&toggleNext)
+void Control::ReadControls(bool&play, bool&toggleNext)
 {
     int playReading = digitalRead(PlayPin);
     int nextReading = digitalRead(NextPin);
@@ -28,18 +26,19 @@ void Control::ReadControls(bool&togglePlay, bool&toggleNext)
     // than the debounce delay, so take it as the actual current state:
 
     // if the button state has changed:
-    if (playReading != buttonState) {
-      buttonState = reading;
+    if (playReading != lastPlayButtonState) {
+      lastPlayButtonState = playReading;
 
       // only toggle the play or pause if the new button state is HIGH
       if (playButtonState == HIGH) {
-        togglePlay = true;
+        playState = !playState;
       }
-      if (playButtonState == HIGH) {
+      if (nextButtonState == HIGH) {
         toggleNext = true;
       }
     }
   }
+
+  play = playState;
 }
 
-#endif __INC_CONTROL_H

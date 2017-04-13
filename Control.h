@@ -1,3 +1,7 @@
+#ifndef __INC_CONTROL_H
+#define __INC_CONTROL_H
+
+#include "Arduino.h"
 
 class Control
 {
@@ -6,7 +10,7 @@ private:
     const int PlayPin = 8;
     const int NextPin = 9;
 
-bool play = FALSE;
+bool playState = false;
 int playButtonState;             // the current reading from the input pin
 int lastPlayButtonState = LOW;   // the previous reading from the input pin
 int nextButtonState;             // the current reading from the input pin
@@ -18,7 +22,9 @@ unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
 unsigned long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
 public:
-    void Control();
+    Control();
     void ReadControls(bool&play, bool&toggleNext);
 
-}
+};
+
+#endif __INC_CONTROL_H
