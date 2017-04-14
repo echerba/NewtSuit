@@ -10,11 +10,11 @@ private:
     const int PlayPin = 8;
     const int NextPin = 9;
 
-bool playState = false;
+bool playState = true;
 int playButtonState;             // the current reading from the input pin
-int lastPlayButtonState = LOW;   // the previous reading from the input pin
+int lastPlayButtonState = HIGH;   // the previous reading from the input pin
 int nextButtonState;             // the current reading from the input pin
-int lastNextButtonState = LOW;   // the previous reading from the input pin
+int lastNextButtonState = HIGH;   // the previous reading from the input pin
 
 // the following variables are unsigned long's because the time, measured in miliseconds,
 // will quickly become a bigger number than can be stored in an int.

@@ -10,8 +10,7 @@ int nextLedState = LOW;
 void setup(){
     pinMode(playLedPin, OUTPUT);
     pinMode(nextLedPin, OUTPUT);
-    //Buttons = new Control();
-
+    
     digitalWrite(playLedPin, playLedState);
     digitalWrite(nextLedPin, nextLedState);
 }
@@ -31,12 +30,13 @@ void loop(){
 
     if(toggle)
     {
-        nextLedState = HIGH;
+        if(nextLedState == HIGH)
+            nextLedState = LOW;
+        else
+            nextLedState = HIGH;
     }
-    else
-    {
-        nextLedState = LOW;
-    }
+    //playLedState = digitalRead(8);
+    //nextLedState = digitalRead(9);
     digitalWrite(playLedPin, playLedState);
     digitalWrite(nextLedPin, nextLedState);
 
