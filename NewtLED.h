@@ -1,18 +1,37 @@
 
+#ifndef __INC_NEWTLED_H
+#define __INC_NEWTLED_H
+
+#include "Arduino.h"
 #include "FastLED.h"
 
-#define NUM_STRIPS 5
-#define NUM_LEDS_PER_STRIP 100
-#define NUM_LEDS NUM_LEDS_PER_STRIP * NUM_STRIPS
-#define BRIGHTNESS  64
 #define LED_TYPE WS2811
-#define COLOR_ORDER GRB
+#define PIN3 3
+#define COLORORDER = GRB
+
+
 //For the NewtSuit we use 5 output pins starting at pin 3 from the Arduino Uno.
-#define PIN1 3
-#define PIN2 4
-#define PIN3 5
-#define PIN4 6
-#define PIN5 7
 
+class NewtLED
+{
+    private:
+        EOrder COLOR_ORDER = EOrder::GRB;
+        static const uint8_t Pin1 = 3;
+        static const uint8_t Pin2 = 4;
+        static const uint8_t Pin3 = 5;
+        static const uint8_t Pin4 = 6;
+        static const uint8_t Pin5 = 7;
 
-void setup_newtled();
+         int Strips = 5;
+         int LedsPerStrip = 100;
+         int LedCount = LedsPerStrip * Strips;
+        const uint8_t Brightness = 64;
+        
+        CRGB *leds;
+
+    public:
+        NewtLED();
+
+};
+
+#endif __INC_NEWTLED_H

@@ -1,19 +1,14 @@
-#ifndef __INC_NEWTLED_H
-#define __INC_NEWTLED_H
-#include "FastLED.h"
 #include "NewtLED.h"
 
-CRGB leds[NUM_STRIPS * NUM_LEDS_PER_STRIP];
+NewtLED::NewtLED() {
 
-void setup_newtled() {
-  // tell FastLED there's 60 NEOPIXEL leds on pin 10, starting at index 0 in the led array
-  FastLED.addLeds<LED_TYPE, PIN1,COLOR_ORDER>(leds, 0*NUM_LEDS_PER_STRIP, NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<LED_TYPE, PIN2,COLOR_ORDER>(leds, 1*NUM_LEDS_PER_STRIP, NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<LED_TYPE, PIN3,COLOR_ORDER>(leds, 2*NUM_LEDS_PER_STRIP, NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<LED_TYPE, PIN4,COLOR_ORDER>(leds, 3*NUM_LEDS_PER_STRIP, NUM_LEDS_PER_STRIP);
-  FastLED.addLeds<LED_TYPE, PIN5,COLOR_ORDER>(leds, 4*NUM_LEDS_PER_STRIP, NUM_LEDS_PER_STRIP);
-  FastLED.setBrightness( BRIGHTNESS );
+  leds = new CRGB[NewtLED::LedCount];
+  // tell FastLED there's 100 NEOPIXEL leds on each pin.
+  FastLED.addLeds<LED_TYPE, Pin1>(leds, 0*LedsPerStrip, LedsPerStrip);
+  FastLED.addLeds<LED_TYPE, Pin2>(leds, 1*LedsPerStrip, LedsPerStrip);
+  FastLED.addLeds<LED_TYPE, Pin3>(leds, 2*LedsPerStrip, LedsPerStrip);
+  FastLED.addLeds<LED_TYPE, Pin4>(leds, 3*LedsPerStrip, LedsPerStrip);
+  FastLED.addLeds<LED_TYPE, Pin5>(leds, 4*LedsPerStrip, LedsPerStrip);
+  FastLED.setBrightness( Brightness );
     
 }
-
-#endif __INC_NEWTLED_H

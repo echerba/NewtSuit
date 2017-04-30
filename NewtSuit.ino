@@ -1,9 +1,13 @@
-// #include "NewtLED.h"
+#include "NewtLED.h"
+#include "Control.h"
 
-// void setup(){
-//     setup_newtled();
-// }
+Control buttons;
+NewtLED ledstrings;
 
-// void loop(){
+ void setup(){
+    return;    
+ }
 
-// }
+ void loop(){
+
+ }
