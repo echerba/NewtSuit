@@ -10,5 +10,6 @@ NewtLED::NewtLED() {
   FastLED.addLeds<LED_TYPE, Pin4>(leds, 3*LedsPerStrip, LedsPerStrip);
   FastLED.addLeds<LED_TYPE, Pin5>(leds, 4*LedsPerStrip, LedsPerStrip);
   FastLED.setBrightness( Brightness );
-    
+  
+  animations = new AnimationSD(leds,LedCount);
 }

@@ -8,16 +8,16 @@ AnimationSD::AnimationSD(CRGB* ledsArray, int ledArrayCount)
     pinMode(10,OUTPUT);
     SD.begin(10); //Should add error handling in here.
     animationRoot = SD.open(AnimationDir);
-    animation = null;
-    NextAnimation;
+    //animation = NULL;
+    NextAnimation();
 }
 
-AnimationSD::NextFrame()
+void AnimationSD::NextFrame()
 {
     animation.readBytes((char*)leds,ledCount);
 }
 
-AnimationSD::NextAnimation()
+void AnimationSD::NextAnimation()
 {
     if(animation)
     {

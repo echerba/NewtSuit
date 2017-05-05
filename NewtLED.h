@@ -4,6 +4,7 @@
 
 #include "Arduino.h"
 #include "FastLED.h"
+#include "Animation.h"
 
 #define LED_TYPE WS2811
 #define PIN3 3
@@ -28,6 +29,7 @@ class NewtLED
         const uint8_t Brightness = 64;
         
         CRGB *leds;
+        IAnimationStore *animations;
 
     public:
         NewtLED();

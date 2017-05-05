@@ -9,23 +9,24 @@
 
 
 
-class AnimationStoreInterface
+class IAnimationStore
 {
     public:
-        AnimationInterface(CRGB* ledsArray, int ledArrayCount){}
-        virtual ~AnimationInterface(){}
+        virtual ~IAnimationStore(){}
         virtual void NextFrame()=0;
         virtual void NextAnimation()=0;
 };
 
-class AnimationSD
+class AnimationSD : public IAnimationStore
 {
     public:
-        AnimationSD(CRGB* ledsArray, int ledArrayCount){}
+        AnimationSD(CRGB* ledsArray, int ledArrayCount);
         ~AnimationSD(){}
+        void NextFrame();
+        void NextAnimation();
 
     private:
-        const string AnimationDir = "animations";
+        const String AnimationDir = "animations";
         CRGB* leds;
         int ledCount;
 
