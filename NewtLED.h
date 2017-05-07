@@ -5,6 +5,7 @@
 #include "Arduino.h"
 #include "FastLED.h"
 #include "Animation.h"
+#include "Control.h"
 
 #define LED_TYPE WS2811
 #define PIN3 3
@@ -31,8 +32,11 @@ class NewtLED
         CRGB *leds;
         IAnimationStore *animations;
 
+        Control *buttons;
+
     public:
         NewtLED();
+        Loop();
 
 };
 

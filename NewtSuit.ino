@@ -1,7 +1,6 @@
 #include "NewtLED.h"
-#include "Control.h"
 
-Control buttons;
+
 NewtLED ledstrings;
 
  void setup(){
@@ -9,5 +8,5 @@ NewtLED ledstrings;
  }
 
  void loop(){
-
+    ledstrings.Loop();
  }
