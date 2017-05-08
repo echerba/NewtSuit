@@ -14,7 +14,7 @@ AnimationSD::AnimationSD(CRGB* ledsArray, int ledArrayCount)
 
 void AnimationSD::NextFrame()
 {
-    animation.readBytes((char*)leds,ledCount);
+    animation.readBytes((char*)leds,ledCount*sizeof(CRGB));
 }
 
 void AnimationSD::NextAnimation()
