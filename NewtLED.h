@@ -17,16 +17,17 @@
 class NewtLED
 {
     private:
-        EOrder COLOR_ORDER = EOrder::GRB;
+        EOrder COLOR_ORDER = EOrder::RGB;
         static const uint8_t Pin1 = 3;
         static const uint8_t Pin2 = 4;
         static const uint8_t Pin3 = 5;
         static const uint8_t Pin4 = 6;
         static const uint8_t Pin5 = 7;
 
-         int Strips = 5;
-         int LedsPerStrip = 100;
-         int LedCount = LedsPerStrip * Strips;
+        static const uint8_t UpdatesPerSecond = 100;
+        static const int Strips = 5;
+        static const int LedsPerStrip = 100;
+        static const int LedCount = LedsPerStrip * Strips;
         const uint8_t Brightness = 64;
         
         CRGB *leds;
@@ -34,9 +35,10 @@ class NewtLED
 
         Control *buttons;
 
+        
     public:
         NewtLED();
-        Loop();
+        int Loop();
 
 };
 
