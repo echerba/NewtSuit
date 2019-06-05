@@ -8,8 +8,20 @@
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+                "databaseFilename": "",
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ]
+            },
+            "intelliSenseMode": "clang-x64",
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "compilerPath": "F:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.13.26128/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         },
         {
             "name": "Linux",
@@ -19,20 +31,45 @@
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+                "databaseFilename": "",
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include"
+                ]
+            },
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "F:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.13.26128/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         },
         {
             "name": "Win32",
             "includePath": [
-                "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
-                "F:/Arduino/libraries"
-
+                "F:\\Program Files (x86)\\Arduino\\tools\\**",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "F:\\Arduino\\libraries\\**",
+                "F:/Program Files (x86)/Arduino/libraries/**",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\**",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include\\avr\\**"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+                "databaseFilename": "",
+                "path": [
+                    "F:/Arduino/libraries/**",
+                    "F:/Program Files (x86)/Arduino/libraries/**"
+                ]
+            },
+            "intelliSenseMode": "msvc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "compilerPath": "F:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.13.26128/bin/Hostx64/x64/cl.exe",
+            "forcedInclude": [
+                "F:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include\\avr\\pgmspace.h",
+                "F:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include\\avr\\io.h"
+            ]
         }
-    ]
+    ],
+    "version": 4
 }
