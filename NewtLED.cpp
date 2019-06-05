@@ -1,7 +1,10 @@
 #include "NewtLED.h"
 
 NewtLED::NewtLED() {
+  Serial.begin(9600);
   delay(3000); // sanity delay
+  Serial.println("/NewtLED()");
+  
   leds = new CRGB[NewtLED::LedCount];
   // tell FastLED there's 100 NEOPIXEL leds on each pin.
   FastLED.addLeds<LED_TYPE, Pin1>(leds, 0*LedsPerStrip, LedsPerStrip);
@@ -16,10 +19,12 @@ NewtLED::NewtLED() {
   buttons = new Control();  
   
   animations = new AnimationSD(leds,LedCount);
+  Serial.println("/NewtLED()");
 }
 
 int NewtLED::Loop()
 {
+  
   static bool playing = true;
   bool nextAnimation = false;
 

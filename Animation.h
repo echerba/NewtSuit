@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 #include "FastLED.h"
-#include <SPI.h>
+//#include <SPI.h>
 #include <SD.h>
 #include <string.h>
 
@@ -26,7 +26,7 @@ class AnimationSD : public IAnimationStore
         void NextAnimation();
 
     private:
-        const String AnimationDir = "animations";
+        const String AnimationDir = "ANIMAT~1";
         CRGB* leds;
         int ledCount;
 
