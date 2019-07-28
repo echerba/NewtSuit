@@ -61,6 +61,7 @@ AnimationSD::AnimationSD(CRGB* ledsArray, int ledArrayCount)
 
 void AnimationSD::NextFrame()
 {
+  Serial.println("NextFrame");
   //Rewind to the begining of the animation if we aren't able to read from it.
   if(!animation.available())
   {
@@ -74,7 +75,7 @@ void AnimationSD::NextFrame()
     //Serial.print(bytesRead, DEC);
     //Serial.println("failed");
   }
-  
+  Serial.println("//NextFrame");
 }
 
 void AnimationSD::NextAnimation()

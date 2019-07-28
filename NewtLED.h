@@ -22,12 +22,13 @@ class NewtLED
         static const uint8_t Pin2 = 4;
         static const uint8_t Pin3 = 5;
         static const uint8_t Pin4 = 6;
-        static const uint8_t Pin5 = 7;
+        //static const uint8_t Pin5 = 7;
 
         static const uint8_t UpdatesPerSecond = 100;
-        static const int Strips = 5;
-        static const int LedsPerStrip = 100;
-        static const int LedCount = LedsPerStrip * Strips;
+        //static const int Strips = 5;
+        static const int LedsPerFrontStrip = 150;
+        static const int LedsPerBackStrip = 100;
+        static const int LedCount = 500;
         const uint8_t Brightness = 64;
         
         CRGB *leds;
