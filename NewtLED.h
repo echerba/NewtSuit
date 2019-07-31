@@ -2,6 +2,9 @@
 #ifndef __INC_NEWTLED_H
 #define __INC_NEWTLED_H
 
+//debug output.
+
+
 #include "Arduino.h"
 #include "FastLED.h"
 #include "Animation.h"
@@ -24,13 +27,13 @@ class NewtLED
         static const uint8_t Pin4 = 6;
         //static const uint8_t Pin5 = 7;
 
-        static const uint8_t UpdatesPerSecond = 100;
+        static const uint8_t UpdatesPerSecond = 2000;
         //static const int Strips = 5;
         static const int LedsPerFrontStrip = 150;
         static const int LedsPerBackStrip = 100;
         static const int LedCount = 500;
         const uint8_t Brightness = 64;
-        
+        //CRGB leds[500];
         CRGB *leds;
         IAnimationStore *animations;
 

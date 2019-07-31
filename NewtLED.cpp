@@ -1,12 +1,17 @@
 #include "NewtLED.h"
 
 NewtLED::NewtLED() {
+  
   Serial.begin(9600);
+  
   delay(3000); // sanity delay
+  
   Serial.println("/NewtLED()");
   
-  leds = new CRGB[NewtLED::LedCount];
+  
+   leds = new CRGB[NewtLED::LedCount];
   // tell FastLED there's 100 NEOPIXEL leds on each pin.
+  //FastLED.addLeds<LED_TYPE, Pin1>(leds, 0, LedCount);
   FastLED.addLeds<LED_TYPE, Pin1>(leds, 0, LedsPerFrontStrip);
   FastLED.addLeds<LED_TYPE, Pin2>(leds, LedsPerFrontStrip, LedsPerBackStrip);
   FastLED.addLeds<LED_TYPE, Pin3>(leds, LedsPerFrontStrip+LedsPerBackStrip, LedsPerBackStrip);
@@ -19,7 +24,9 @@ NewtLED::NewtLED() {
   buttons = new Control();  
   
   animations = new AnimationSD(leds,LedCount);
+  
   Serial.println("/NewtLED()");
+  
 }
 
 int NewtLED::Loop()
@@ -39,6 +46,6 @@ int NewtLED::Loop()
     animations->NextFrame();
     FastLED.show();
     //This all needs to be updated based on the real delays.
-    delay(100);
+    delay(200);
   }
 }
