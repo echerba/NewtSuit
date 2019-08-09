@@ -33,6 +33,7 @@ void Control::ReadControls(bool&play, bool&toggleNext)
       // only toggle the play or pause if the new button state is HIGH
       if (playButtonState == LOW) {
         playState = !playState;
+        Serial.println("TogglePause");
       }
     }
 
@@ -49,4 +50,3 @@ void Control::ReadControls(bool&play, bool&toggleNext)
   lastNextButtonState = nextReading;
   lastPlayButtonState = playReading;
 }
-
