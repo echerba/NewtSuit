@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Remap": {
+      "commandName": "Project",
+      "commandLineArgs": "\"F:\\Temp\\RawAnimations\""
+    }
+  }
+}
